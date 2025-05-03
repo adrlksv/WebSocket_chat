@@ -31,7 +31,9 @@ async def test_create_chat_command_title_already_exists(
     chat = Chat(title=Title(title_text))
     await chat_repository.add_chat(chat)
 
+    assert chat in chat_repository._saved_chats
+
     with pytest.raises(ChatWithThatTitleAlreadyExistsException):
-        await mediator.handle_command(CreateChatCommand(title=title_text))[0]
+        await mediator.handle_command(CreateChatCommand(title=title_text))
 
     assert len(chat_repository._saved_chats) == 1

@@ -5,16 +5,16 @@ description = "WebSocket Chat"
 authors = [
     {name = "Andrey",email = "Qwerty123Andrey@bk.ru"}
 ]
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "fastapi[all] (>=0.115.12,<0.116.0)",
-    "motor (>=3.7.0,<4.0.0)",
-    "ipython (>=9.1.0,<10.0.0)",
-    "pytest (>=8.3.5,<9.0.0)",
-    "pytest-asyncio (>=0.26.0,<0.27.0)",
-    "faker (>=37.1.0,<38.0.0)",
-]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+fastapi = {extras = ["all"], version = "^0.115.12"}
+motor = "^3.7.0"
+ipython = "^9.1.0"
+pytest = "^8.3.5"
+pytest-asyncio = "^0.26.0"
+faker = "^37.1.0"
+punq = "^0.7.0"
 
 
 [build-system]
