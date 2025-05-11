@@ -13,16 +13,3 @@ def create_app() -> FastAPI:
     app.include_router(prefix="/chat", router=message_router)
 
     return app
-
-# def create_app() -> FastAPI:
-#     app = FastAPI(
-#         title="Simple Kafka Chat",
-#         docs_url="/api/docs",
-#         description="A simple kafka + ddd chat",
-#         debug=True,
-#     )
-#     app.include_router(prefix='chat/', router=message_router)
-
-#     return app
-
-
